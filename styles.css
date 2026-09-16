@@ -206,3 +206,171 @@ h1 { margin-bottom: 10px; font: 400 clamp(54px, 6vw, 82px)/1 'American Typewrite
   .brand-tagline { display: none; }
   .brand-title { font-size: 19px; }
 }
+
+/* v4: mobile score-card layout — replaces horizontal table scrolling */
+@media (max-width: 767px) {
+  .table-wrap {
+    overflow: visible;
+    border-bottom: 0;
+  }
+
+  .table-wrap::after {
+    content: none;
+    display: none;
+  }
+
+  .score-table,
+  .final-table,
+  .image-score-table {
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    background: transparent;
+  }
+
+  .score-table thead,
+  .final-table thead,
+  .image-score-table thead {
+    display: none;
+  }
+
+  .score-table tbody,
+  .final-table tbody,
+  .image-score-table tbody {
+    display: block;
+  }
+
+  .score-table tbody tr,
+  .final-table tbody tr,
+  .image-score-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0 0 12px;
+    border: 1px solid #d1c5b3;
+    background: rgba(248,241,227,.78);
+    box-shadow: 0 1px 4px rgba(55,32,12,.05);
+  }
+
+  .score-table tbody tr:nth-child(even),
+  .final-table tbody tr:nth-child(even),
+  .image-score-table tbody tr:nth-child(even) {
+    background: rgba(248,241,227,.78);
+  }
+
+  .score-table td,
+  .final-table td,
+  .image-score-table td {
+    width: auto !important;
+    border: 0;
+    padding: 0;
+    text-align: left !important;
+    background: transparent;
+  }
+
+  /* Contestant */
+  .score-table tbody td:first-child,
+  .final-table tbody td:first-child,
+  .image-score-table tbody td:first-child {
+    grid-column: 1 / -1;
+    padding: 11px 13px 4px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1d1713;
+  }
+
+  /* Result / item description on the standard five-column tables */
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(2) {
+    grid-column: 1 / -1;
+    padding: 0 13px 12px;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #443b33;
+  }
+
+  /* Score strip */
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(3),
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(4),
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(5),
+  .image-score-table tbody td:nth-child(2),
+  .image-score-table tbody td:nth-child(3),
+  .image-score-table tbody td:nth-child(4),
+  .final-table tbody td:nth-child(2),
+  .final-table tbody td:nth-child(3),
+  .final-table tbody td:nth-child(4) {
+    position: relative;
+    padding: 28px 8px 10px;
+    min-height: 62px;
+    text-align: center !important;
+    border-top: 1px solid #d8d1c6;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  /* Vertical separators inside the score strip */
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(4),
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(5),
+  .image-score-table tbody td:nth-child(3),
+  .image-score-table tbody td:nth-child(4),
+  .final-table tbody td:nth-child(3),
+  .final-table tbody td:nth-child(4) {
+    border-left: 1px solid #d8d1c6;
+  }
+
+  /* Compact labels above each score */
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(3)::before,
+  .image-score-table tbody td:nth-child(2)::before,
+  .final-table tbody td:nth-child(2)::before {
+    content: "Greg";
+  }
+
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(4)::before,
+  .image-score-table tbody td:nth-child(3)::before,
+  .final-table tbody td:nth-child(3)::before {
+    content: "My Score";
+  }
+
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(5)::before,
+  .image-score-table tbody td:nth-child(4)::before,
+  .final-table tbody td:nth-child(4)::before {
+    content: "Change";
+  }
+
+  .score-table:not(.image-score-table):not(.final-table) tbody td:nth-child(n+3)::before,
+  .image-score-table tbody td:nth-child(n+2)::before,
+  .final-table tbody td:nth-child(n+2)::before {
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    right: 4px;
+    color: #5a5047;
+    font-size: 10.5px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .035em;
+  }
+
+  /* Preserve the site’s emphasis on the rescored value */
+  .score-table:not(.image-score-table):not(.final-table) tbody td.my-score,
+  .image-score-table tbody td.my-score,
+  .final-table tbody td.my-score {
+    background: rgba(196,80,57,.105);
+    color: #651111;
+  }
+
+  .score-table:not(.image-score-table):not(.final-table) tbody td.my-score::before,
+  .image-score-table tbody td.my-score::before,
+  .final-table tbody td.my-score::before {
+    color: #7a0c0c;
+  }
+
+  /* The image task already shows the result above, so its cards begin with the name. */
+  .image-score-wrap {
+    border-bottom: 0;
+  }
+
+  /* Final scores use the same mobile card language. */
+  .final-main .table-wrap {
+    overflow: visible;
+  }
+}
