@@ -1,0 +1,342 @@
+
+.home-hero {
+  padding: 54px 0 52px;
+  text-align: center;
+  border-bottom: 1px solid rgba(116,83,53,.16);
+}
+
+.home-kicker {
+  color: var(--burgundy);
+  font: 700 16px/1.2 "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  margin-bottom: 10px;
+}
+
+.home-title {
+  margin: 0;
+  font: 400 clamp(54px, 8vw, 96px)/.98 'American Typewriter Web','Courier New',serif;
+  letter-spacing: -.025em;
+}
+
+.home-tagline {
+  margin: 13px 0 0;
+  color: #8e6f28;
+  font: 400 clamp(20px, 2vw, 28px)/1.2 'American Typewriter Web','Courier New',serif;
+}
+
+.home-intro {
+  max-width: 780px;
+  margin: 26px auto 0;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.hero-actions,
+.section-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.section {
+  padding: 46px 0;
+  border-bottom: 1px solid rgba(116,83,53,.14);
+}
+
+.section-title {
+  margin: 0 0 18px;
+  font: 400 39px/1.08 'American Typewriter Web','Courier New',serif;
+}
+
+.section-copy {
+  max-width: 800px;
+  font-size: 17px;
+  line-height: 1.58;
+}
+
+.methodology-box {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--burgundy);
+  font-weight: 700;
+  text-decoration: none;
+}
+.text-link:hover { text-decoration: underline; }
+
+.latest-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.latest-image {
+  margin: 0;
+  background: #f7f0e4;
+  border: 1px solid #d8c8a9;
+  padding: 12px;
+  box-shadow: var(--shadow);
+  transform: rotate(-.6deg);
+}
+
+.latest-image img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.eyebrow {
+  color: var(--burgundy);
+  font: 700 15px/1.2 "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+  margin-bottom: 5px;
+}
+
+.latest-title {
+  margin: 0;
+  font: 400 48px/1.02 'American Typewriter Web','Courier New',serif;
+}
+
+.latest-copy {
+  margin: 14px 0 0;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.stat-card {
+  background: rgba(248,241,227,.78);
+  border: 1px solid #d0bea0;
+  box-shadow: 0 2px 7px rgba(55,32,12,.07);
+  text-align: center;
+  padding: 24px 14px 20px;
+}
+
+.stat-number {
+  color: var(--burgundy);
+  font: 400 46px/1 'American Typewriter Web','Courier New',serif;
+}
+
+.stat-label {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.progress-box {
+  background: rgba(248,241,227,.7);
+  border: 1px solid #d0bea0;
+  padding: 24px;
+  box-shadow: 0 2px 7px rgba(55,32,12,.06);
+}
+
+.progress-copy {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.progress-track {
+  height: 18px;
+  background: rgba(120,90,50,.15);
+  border: 1px solid #c7b495;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 16.67%;
+  height: 100%;
+  background: linear-gradient(90deg, #8f0e0e, #b51c1c);
+}
+
+.progress-caption {
+  margin-top: 9px;
+  color: #695a4b;
+  font-size: 14px;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.explore-card {
+  text-decoration: none;
+  background: rgba(248,241,227,.76);
+  border: 1px solid #d0bea0;
+  min-height: 120px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 2px 7px rgba(55,32,12,.06);
+}
+
+.explore-card strong {
+  font: 400 25px/1.15 'American Typewriter Web','Courier New',serif;
+}
+
+.explore-card span {
+  margin-top: 7px;
+  color: #685949;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.explore-card:hover {
+  border-color: var(--burgundy);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .latest-grid { grid-template-columns: 1fr; }
+  .latest-image { transform: none; }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .explore-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 767px) {
+  .home-hero { padding: 36px 0 38px; }
+  .home-title { font-size: clamp(47px, 15vw, 68px); }
+  .home-tagline { font-size: 21px; }
+  .home-intro { font-size: 16px; }
+  .hero-actions .nav-button,
+  .section-actions .nav-button { width: 100%; }
+  .section { padding: 34px 0; }
+  .section-title { font-size: 31px; }
+  .section-copy { font-size: 15.5px; }
+  .latest-title { font-size: 38px; }
+  .latest-copy { font-size: 15.5px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-card { padding: 20px 10px 17px; }
+  .stat-number { font-size: 39px; }
+  .explore-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
+
+.info-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.info-panel {
+  background: rgba(248,241,227,.76);
+  border: 1px solid #d0bea0;
+  box-shadow: 0 2px 7px rgba(55,32,12,.06);
+  padding: 24px;
+}
+
+.info-panel h2 {
+  margin: 0 0 10px;
+  font: 400 31px/1.1 'American Typewriter Web','Courier New',serif;
+}
+
+.info-panel p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.info-panel .nav-button {
+  margin-top: 18px;
+}
+
+@media (max-width: 767px) {
+  .info-split { grid-template-columns: 1fr; }
+  .info-panel { padding: 20px; }
+  .info-panel h2 { font-size: 28px; }
+}
+
+
+.taskmaster-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.watch-buttons {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.watch-buttons .nav-button {
+  width: 100%;
+  margin-top: 0;
+}
+
+.resources-intro {
+  max-width: 820px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+}
+
+.resource-card {
+  display: block;
+  text-decoration: none;
+  background: rgba(248,241,227,.76);
+  border: 1px solid #d0bea0;
+  box-shadow: 0 2px 7px rgba(55,32,12,.06);
+  padding: 20px;
+  min-height: 135px;
+}
+
+.resource-card strong {
+  display: block;
+  font: 400 24px/1.15 'American Typewriter Web','Courier New',serif;
+}
+
+.resource-card span {
+  display: block;
+  margin-top: 8px;
+  color: #685949;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.resource-card:hover {
+  border-color: var(--burgundy);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .resources-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 767px) {
+  .taskmaster-intro { text-align: center; }
+  .resources-intro { font-size: 15px; }
+  .resources-grid { grid-template-columns: 1fr; }
+}
