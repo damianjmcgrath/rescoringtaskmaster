@@ -1,0 +1,242 @@
+.ranking-page {
+  padding: 34px 0 54px;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #715a43;
+}
+
+.breadcrumb a {
+  color: var(--burgundy);
+  text-decoration: none;
+}
+
+.page-intro {
+  max-width: 880px;
+  margin-bottom: 30px;
+}
+
+.page-title {
+  margin: 0 0 12px;
+  font: 400 clamp(42px, 6vw, 68px)/1.02 'American Typewriter Web','Courier New',serif;
+}
+
+.page-intro p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.rankings-hub {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.hub-card {
+  display: grid;
+  grid-template-columns: minmax(280px, .9fr) 1.1fr;
+  gap: 30px;
+  align-items: center;
+  background: rgba(248,241,227,.76);
+  border: 1px solid #d0bea0;
+  box-shadow: 0 2px 8px rgba(55,32,12,.07);
+  padding: 18px;
+}
+
+.hub-card:nth-child(even) .hub-visual {
+  order: 2;
+}
+
+.hub-visual,
+.ranking-thumb {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(126,0,0,.92), rgba(61,24,15,.88)),
+    radial-gradient(circle at 28% 25%, rgba(255,255,255,.22), transparent 33%);
+  border: 8px solid #f7f0e4;
+  box-shadow: 0 2px 7px rgba(55,32,12,.13);
+}
+
+.hub-visual {
+  min-height: 230px;
+}
+
+.placeholder-label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  text-align: center;
+  color: #f5e5b7;
+  font: 400 30px/1.15 'American Typewriter Web','Courier New',serif;
+}
+
+.hub-copy h2 {
+  margin: 0 0 10px;
+  font: 400 36px/1.08 'American Typewriter Web','Courier New',serif;
+}
+
+.hub-copy p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.hub-copy .nav-button {
+  margin-top: 18px;
+  display: inline-block;
+}
+
+.list-heading {
+  margin: 34px 0 18px;
+  font: 400 38px/1.08 'American Typewriter Web','Courier New',serif;
+}
+
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ranking-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 106px 176px minmax(0,1fr);
+  gap: 20px;
+  align-items: stretch;
+  background: rgba(248,241,227,.78);
+  border: 1px solid #d0bea0;
+  box-shadow: 0 2px 7px rgba(55,32,12,.06);
+  padding: 14px;
+  scroll-margin-top: 120px;
+}
+
+.rank-badge {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  color: #7e0707;
+  font: 700 38px/1 'American Typewriter Web','Courier New',serif;
+}
+
+.rank-badge span {
+  display: inline-block;
+  min-width: 78px;
+  text-align: center;
+  padding: 8px 10px 9px;
+  background: #e4c66d;
+  border-bottom: 4px solid #8b690b;
+  clip-path: polygon(0 0,100% 0,87% 100%,0 100%);
+}
+
+.ranking-entry.bottom .rank-badge {
+  color: white;
+}
+
+.ranking-entry.bottom .rank-badge span {
+  background: #a72626;
+  border-bottom-color: #651111;
+}
+
+.ranking-thumb {
+  min-height: 156px;
+  border-width: 6px;
+}
+
+.ranking-content {
+  min-width: 0;
+}
+
+.ranking-eyebrow {
+  color: var(--burgundy);
+  font: 700 13px/1.2 "Oswald", sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin: 2px 0 5px;
+}
+
+.ranking-title {
+  margin: 0;
+  font: 400 30px/1.08 'American Typewriter Web','Courier New',serif;
+}
+
+.ranking-meta {
+  margin: 8px 0 0;
+  color: #5f5043;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.ranking-thoughts {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ranking-content .nav-button {
+  margin-top: 14px;
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.section-rule {
+  margin: 40px 0 8px;
+  border: 0;
+  border-top: 2px solid rgba(126,7,7,.3);
+}
+
+.task-note {
+  margin: -8px 0 20px;
+  color: #655748;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .hub-card {
+    grid-template-columns: 1fr;
+  }
+  .hub-card:nth-child(even) .hub-visual {
+    order: 0;
+  }
+  .ranking-entry {
+    grid-template-columns: 90px 145px minmax(0,1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .ranking-page {
+    padding-top: 26px;
+  }
+  .page-title {
+    font-size: 45px;
+  }
+  .ranking-entry {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+  .rank-badge {
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+  .rank-badge span {
+    min-width: 68px;
+    font-size: 31px;
+  }
+  .ranking-thumb {
+    min-height: 210px;
+  }
+  .ranking-title {
+    font-size: 28px;
+  }
+  .hub-visual {
+    min-height: 200px;
+  }
+}
